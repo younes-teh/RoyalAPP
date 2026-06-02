@@ -70,7 +70,7 @@ foreach (var description in builderProvider.ApiVersionDescriptions)
     var versionNumber = description.ApiVersion.ToString();
     var displayName = $"Demo API -- {versionNumber}";
 
-    builder.Services.AddOpenApi(versionName,options =>
+    builder.Services.AddOpenApi(versionName, options =>
     {
         options.AddDocumentTransformer((document, context, cancellationToken) =>
         {
@@ -122,7 +122,7 @@ builder.Services.AddAutoMapper(o =>
     o.CreateMap<Villa, VillaUpdateDTO>().ReverseMap();
     o.CreateMap<Villa, VillaDTO>().ReverseMap();
     o.CreateMap<VillaUpdateDTO, VillaDTO>().ReverseMap();
-    o.CreateMap<User, UserDTO>().ReverseMap();
+    o.CreateMap<ApplicationUser, UserDTO>().ReverseMap();
     o.CreateMap<VillaAmenities, VillaAmentiesCreateDTO>().ReverseMap();
     o.CreateMap<VillaAmenities, VillaAmentiesUpdateDTO>().ReverseMap();
     o.CreateMap<VillaAmenities, VillaAmentiesDTO>()
