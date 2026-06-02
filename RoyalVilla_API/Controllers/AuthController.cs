@@ -21,7 +21,7 @@ namespace RoyalVilla_API.Controllers
         [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status409Conflict)]
-        public async Task<ActionResult<ApiResponse<UserDTO>>> Register([FromBody]RegisterationRequestDTO registerationRequestDTO)
+        public async Task<ActionResult<ApiResponse<UserDTO>>> Register([FromBody] RegisterationRequestDTO registerationRequestDTO)
         {
             try
             {
@@ -73,7 +73,7 @@ namespace RoyalVilla_API.Controllers
 
                 if (loginResponse == null)
                 {
-                    return BadRequest(ApiResponse<object>.BadRequest("Login failed"));
+                    return BadRequest(ApiResponse<object>.BadRequest("Login failed. Please check your credentials."));
                 }
 
                 //auth service 
